@@ -1,0 +1,17 @@
+<div *ngIf="!toDoDescription.isEditDescription"  class="items-block__title">
+  {{ toDoDescription.description }}
+  <button class="items-block__edit-button" (click)="changeFlagEdit()">Edit</button>
+</div>
+<div *ngIf="toDoDescription.isEditDescription">
+  <form action="" #formDescription="ngForm" class="items-block__edit">
+    <textarea type="text" name="description" [ngModel]="toDoDescription.description" class="form-textarea" required ></textarea>
+    <button class="items-block__edit-button" (click)="changeFlagEdit()">Cancel</button>
+    <!-- save -->
+    <button
+      class="items-block__edit-button"
+      [disabled]="formDescription.invalid"
+      (click)="saveDescription(toDoDescription.id, formDescription.value.description)">
+      Save
+    </button>
+  </form>
+</div>

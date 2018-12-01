@@ -1,0 +1,20 @@
+.line {
+  height: 1px;
+  margin: 25px 0;
+  border: 1px solid black;
+}
+
+.system-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.system__filter {
+  width: 20%;
+  height: 100vh;
+  background-color: #d8d8d8;
+}
+
+.system__list {
+  width: 78%;
+}

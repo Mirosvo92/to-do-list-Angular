@@ -1,0 +1,31 @@
+<form [formGroup]="form" (ngSubmit)="createUser()" class="auth-form">
+  <!-- mail -->
+  <div>
+    <div class="auth-title">mail</div>
+    <input type="text"
+           class="form-input"
+           [ngClass]="{'error': form.get('email').invalid && form.get('email').touched}"
+           formControlName="email"/>
+  </div>
+  <!-- password -->
+  <div>
+    <div class="auth-title">password (at least 6 characters )</div>
+    <input type="password"
+           class="form-input"
+           [ngClass]="{'error': form.get('password').invalid && form.get('password').touched}"
+           formControlName="password"/>
+  </div>
+  <!-- name -->
+  <div>
+    <div class="auth-title">name</div>
+    <input type="text"
+           class="form-input"
+           [ngClass]="{'error': form.get('name').invalid && form.get('name').touched}"
+           formControlName="name"/>
+  </div>
+  <button class="auth-button form-button"  [disabled]="form.invalid || isSendReq.send" >Create</button>
+</form>
+<!-- error -->
+<div>
+  <p class="error-text">{{ errorText }}</p>
+</div>

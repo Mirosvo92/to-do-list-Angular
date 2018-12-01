@@ -1,0 +1,17 @@
+<div *ngIf="!toDoTitle.isEditTitle"  class="items-block__title">
+  {{ toDoTitle.title }}
+  <button class="items-block__edit-button" (click)="changeFlagEdit()">Edit</button>
+</div>
+<div *ngIf="toDoTitle.isEditTitle">
+  <form action="" #formTitle="ngForm" class="items-block__edit">
+    <input type="text" name="title" [ngModel]="toDoTitle.title" class="form-input" required />
+    <button class="items-block__edit-button" (click)="changeFlagEdit()">Cancel</button>
+    <!-- save -->
+    <button
+      class="items-block__edit-button"
+      [disabled]="formTitle.invalid"
+      (click)="saveTitle(toDoTitle.id, formTitle.value.title)">
+      Save
+    </button>
+  </form>
+</div>

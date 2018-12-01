@@ -1,0 +1,39 @@
+.auth-form {
+  width: 310px;
+  display: flex;
+  padding-top: 15px;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #d8d8d8;
+}
+
+.auth-button {
+  margin: 25px auto;
+  border-radius: 5px;
+}
+
+
+.auth-link {
+  display: block;
+  margin-bottom: 5px;
+  color: #0645AD;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.auth-title{
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.error-text {
+  margin-top: 10px;
+  font-size: 25px;
+  color: red;
+  text-transform: uppercase;
+  text-align: center;
+}

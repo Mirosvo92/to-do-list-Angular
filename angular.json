@@ -10,7 +10,7 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "SCSS"
+          "styleext": "scss"
         }
       },
       "architect": {
@@ -27,7 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.SCSS"
+              "src/assets/css/reset.css",
+              "src/styles.scss",
+              "src/assets/css/auth-page.scss",
+              "src/assets/css/to-do-list.scss"
             ],
             "scripts": []
           },
@@ -76,7 +79,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.SCSS"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [

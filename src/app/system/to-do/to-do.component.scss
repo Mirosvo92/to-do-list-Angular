@@ -1,0 +1,19 @@
+.to-do{
+  width: 376px;
+  padding: 25px 0;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #d8d8d8;
+}
+
+.to-do__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.to-do__form-item {
+  margin-top: 10px;
+}

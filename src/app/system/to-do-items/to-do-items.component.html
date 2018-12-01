@@ -1,0 +1,14 @@
+<div class="to-do-items">
+  <div class="items-block" *ngFor="let toDoItem of toDoItemsList">
+    <!-- title -->
+    <app-to-do-items-title [toDoTitle]="toDoItem" ></app-to-do-items-title>
+    <!-- desc -->
+    <app-to-do-items-description [toDoDescription]="toDoItem"></app-to-do-items-description>
+    <!-- date -->
+    <div class="items-block__date">Added: {{ toDoItem.created_at }}</div>
+    <!-- delete -->
+    <div class="to-do-items__delete">
+      <button (click)="deleteItem(toDoItem.id)">x</button>
+    </div>
+  </div>
+</div>
