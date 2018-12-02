@@ -15,7 +15,7 @@
            [ngClass]="{'error': form.get('password').invalid && form.get('password').touched}"
            formControlName="password"/>
   </div>
-  <button [disabled]="form.invalid || isSendReq.send" class="auth-button form-button" >Come in</button>
+  <button [disabled]="form.invalid" appDisabledButton class="auth-button form-button" >Come in</button>
   <!-- reg -->
   <div class="">
     <a class="auth-link" [routerLink]="['registration']">I do not have an account</a>

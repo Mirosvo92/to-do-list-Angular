@@ -11,13 +11,13 @@ export class AuthService {
   }
 
   login(userId: number): void {
-    localStorage.setItem('user', JSON.stringify(userId));
-    this.usersService.id = +localStorage.getItem('user');
+    localStorage.setItem('userToDoApp', JSON.stringify(userId));
+    this.usersService.id = +localStorage.getItem('userToDoApp');
     this.router.navigate(['system', 'markets']);
   }
 
   logout(): void {
-    localStorage.removeItem('user');
+    localStorage.removeItem('userToDoApp');
     this.router.navigate(['auth', 'login']);
   }
 

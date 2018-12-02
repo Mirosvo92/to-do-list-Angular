@@ -1,4 +1,4 @@
-.to-do{
+.to-do {
   width: 376px;
   padding: 25px 0;
   text-align: center;
@@ -16,4 +16,10 @@
 
 .to-do__form-item {
   margin-top: 10px;
+}
+
+@media (max-width : 480px) {
+  .to-do {
+    width: 100%;
+  }
 }

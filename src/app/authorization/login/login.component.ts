@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   form: FormGroup;
   errorText: string;
-  isSendReq = {send: false};
 
   constructor(private usersService: UsersService,
               private authService: AuthService) { }
@@ -29,7 +28,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnDestroy() {}
 
   comeIn(): void {
-    disabledBut(this.isSendReq);
     this.usersService.getUserByEmail(this.form.value.email)
       .pipe(untilDestroyed(this))
       .subscribe((user) => {

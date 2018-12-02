@@ -1,19 +1,19 @@
 import {Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot} from '@angular/router';
+import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
-import {User} from '../models/user.model';
 
 
 @Injectable()
 export class SystemGuard implements CanActivate {
+
   constructor( private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem('userToDoApp');
     if (user) {
       return true;
     } else {
-      this.router.navigate(['auth', 'login']);
+      this.router.navigate(['auth', 'login']).then();
       return false;
     }
   }

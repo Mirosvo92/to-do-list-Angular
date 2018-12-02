@@ -12,9 +12,31 @@
 .system__filter {
   width: 20%;
   height: 100vh;
+  padding-bottom: 20px;
   background-color: #d8d8d8;
 }
 
 .system__list {
   width: 78%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 992px) {
+  .system-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .system__filter {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .system__list {
+    width: 100%;
+  }
 }

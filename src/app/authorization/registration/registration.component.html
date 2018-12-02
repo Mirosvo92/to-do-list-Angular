@@ -23,7 +23,7 @@
            [ngClass]="{'error': form.get('name').invalid && form.get('name').touched}"
            formControlName="name"/>
   </div>
-  <button class="auth-button form-button"  [disabled]="form.invalid || isSendReq.send" >Create</button>
+  <button class="auth-button form-button"  [disabled]="form.invalid" appDisabledButton >Create</button>
 </form>
 <!-- error -->
 <div>

@@ -5,12 +5,13 @@ import {Observable} from 'rxjs';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
+
   constructor( private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem('userToDoApp');
     if (user) {
-      this.router.navigate(['system']);
+      this.router.navigate(['system']).then();
       return false;
     } else {
       return true;

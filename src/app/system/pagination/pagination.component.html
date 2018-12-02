@@ -1,0 +1,11 @@
+<div class="pagination">
+  <div class="pagination__items" *ngFor="let numberPage of numbersPage" >
+    <button
+      class="pagination__items-button"
+      [disabled]="numberPage === activePage"
+      [class.acpagination__items-button--ative]="numberPage === activePage"
+      (click)="setCurrentPage(numberPage)">
+      {{ numberPage }}
+    </button>
+  </div>
+</div>

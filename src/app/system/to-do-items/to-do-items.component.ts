@@ -24,10 +24,6 @@ export class ToDoItemsComponent implements OnDestroy {
       .pipe(untilDestroyed(this))
       .subscribe( (data: {}) => {
       if (data) {
-        // this.toDoItemsList = this.toDoItemsList.filter( el => {
-        //   return el['id'] !== id;
-        // });
-        // this.deleToDo.emit(this.toDoItemsList);
         this.deleToDo.emit(id);
       }
     }, error => {

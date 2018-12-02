@@ -1,0 +1,23 @@
+.pagination {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.pagination__items {
+  margin-right: 10px;
+}
+
+.pagination__items-button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #808080;
+}
+
+
+@media (max-width: 992px) {
+  .pagination {
+    width: 100%;
+  }
+}

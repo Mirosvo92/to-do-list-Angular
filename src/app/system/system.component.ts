@@ -1,8 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {ToDoService} from '../shared/services/to-do.service';
 import {ToDoItemInterface} from '../shared/interfaces/to-do.interface';
 import {untilDestroyed} from 'ngx-take-until-destroy';
 import {addFlagChanges} from '../shared/helpers/functions';
+import index from '@angular/cli/lib/cli';
 
 @Component({
   selector: 'app-system',
@@ -12,10 +13,13 @@ import {addFlagChanges} from '../shared/helpers/functions';
 export class SystemComponent implements OnInit, OnDestroy {
 
   toDoListData: ToDoItemInterface[];
+  toDoListDataPagination: ToDoItemInterface[];
   // cloneObjectListData an array that will store all current objects, it is necessary for filter
   cloneObjectListData: ToDoItemInterface[];
+  dataPagination = { countElements: 6};
 
-  constructor(private toDoService: ToDoService) { }
+  constructor(private toDoService: ToDoService,
+              private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.toDoService.getListUsersToDoList()
@@ -30,8 +34,6 @@ export class SystemComponent implements OnInit, OnDestroy {
     }, error => {
       console.log('system', error);
     });
-    // add
-    this.initAddNewToDo();
   }
 
   ngOnDestroy() {}
@@ -43,8 +45,19 @@ export class SystemComponent implements OnInit, OnDestroy {
     this.delElCloneObject(id);
   }
 
+  add(data: ToDoItemInterface): void {
+    addFlagChanges([data]);
+    this.addElCloneObject(data);
+    this.toDoListData = this.cloneObjectListData;
+  }
+
   filter(data: ToDoItemInterface[]) {
     this.toDoListData = data;
+  }
+
+  setDataByPagination(data: {startIndex: number, endIndex: number}): void {
+    this.toDoListDataPagination = this.toDoListData.slice(data.startIndex, data.endIndex + 1);
+    this.cdr.detectChanges();
   }
 
   private delElCloneObject(id: number): void {
@@ -56,18 +69,6 @@ export class SystemComponent implements OnInit, OnDestroy {
   private addElCloneObject(data: ToDoItemInterface): void {
     this.cloneObjectListData.unshift(data);
     this.cloneObjectListData = [...this.cloneObjectListData];
-  }
-
-  private initAddNewToDo(): void {
-    this.toDoService.$addNewToDo
-      .pipe(untilDestroyed(this))
-      .subscribe( (data: ToDoItemInterface) => {
-        if (Object.keys(data).length) {
-          addFlagChanges([data]);
-          this.addElCloneObject(data);
-          this.toDoListData = this.cloneObjectListData;
-        }
-      });
   }
 
 }

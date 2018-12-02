@@ -21,7 +21,7 @@
       </textarea>
     </div>
     <div class="to-do__form-item">
-      <button [disabled]="formCreateEvent.invalid || isSendReq.send" class="form-button" (click)="addToDo()" >Add</button>
+      <button [disabled]="formCreateEvent.invalid" class="form-button" (click)="addToDo()" >Add</button>
     </div>
   </form>
 </div>

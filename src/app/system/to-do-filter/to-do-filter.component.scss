@@ -14,3 +14,9 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 992px) {
+  .system-wrapper {
+    flex-direction: column;
+  }
+}

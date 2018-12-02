@@ -16,7 +16,6 @@ export class ToDoFilterComponent implements OnInit, OnChanges {
   @Input() cloneToDoListData: ToDoItemInterface[];
   @Output() sendFilterData = new EventEmitter();
   dateSelect: string[];
-  isSendReq = {send: false};
 
   constructor() { }
 
@@ -31,7 +30,6 @@ export class ToDoFilterComponent implements OnInit, OnChanges {
   }
 
   filter() {
-    disabledBut(this.isSendReq);
     const dataFormFilter = this.formFilter.value;
     // namesFilterField = [title, created_at]
     const namesFilterField = Object.keys(dataFormFilter);

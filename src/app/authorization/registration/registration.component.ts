@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UsersService} from '../../shared/services/user.service';
 import {AuthService} from '../../shared/services/auth.service';
@@ -16,7 +16,6 @@ export class RegistrationComponent implements OnInit, OnDestroy {
 
   form: FormGroup;
   errorText: string;
-  isSendReq = {send: false};
 
   constructor(private usersService: UsersService,
               private authService: AuthService) { }
@@ -32,7 +31,6 @@ export class RegistrationComponent implements OnInit, OnDestroy {
   ngOnDestroy() {}
 
   createUser(): void {
-    disabledBut(this.isSendReq);
     const {email, password, name} = this.form.value;
     const user = new User(email, password, name);
     this.usersService.getUserByEmail(user['email'])

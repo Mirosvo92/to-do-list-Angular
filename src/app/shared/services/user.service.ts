@@ -10,17 +10,17 @@ export class UsersService extends BaseApi {
 
   id: number;
 
-  get userId(): number {
-    return this.userId;
-  }
-
   set userId(id: number) {
     this.id = id;
   }
 
+  get userId(): number {
+    return this.userId;
+  }
+
   constructor(public http: HttpClient) {
     super(http);
-    const isUser = localStorage.getItem('user');
+    const isUser = localStorage.getItem('userToDoApp');
     if (isUser) {
       this.userId = +isUser;
     }

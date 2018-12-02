@@ -5,9 +5,13 @@ import {UsersService} from './services/user.service';
 import {BaseApi} from './services/base-api.service';
 import {AuthService} from './services/auth.service';
 import {ToDoService} from './services/to-do.service';
+import {DisabledButtonDirective} from './directives/disabled-button.directive';
 
 
 @NgModule({
+  declarations: [
+    DisabledButtonDirective
+  ],
   imports: [
     ReactiveFormsModule,
     FormsModule,
@@ -22,7 +26,8 @@ import {ToDoService} from './services/to-do.service';
   exports: [
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    DisabledButtonDirective
   ]
 })
 export class SharedModule {}

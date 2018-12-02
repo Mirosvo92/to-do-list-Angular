@@ -7,9 +7,6 @@ import {ToDoItemInterface} from '../interfaces/to-do.interface';
 @Injectable()
 export class ToDoService extends BaseApi {
 
-  $addNewToDo = new BehaviorSubject<{}>({});
-  $deleteToDo = new BehaviorSubject<{}>({});
-
   constructor(public http: HttpClient) {
     super(http);
   }

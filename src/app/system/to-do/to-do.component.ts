@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {ToDoService} from '../../shared/services/to-do.service';
 import * as moment from 'moment';
@@ -14,7 +14,7 @@ import {disabledBut} from '../../shared/helpers/functions';
 export class ToDoComponent implements OnDestroy {
 
   @ViewChild('formCreateEvent') formCreateEvent: NgForm;
-  isSendReq = {send: false};
+  @Output() addNewToDo = new EventEmitter();
 
   constructor(private toDoService: ToDoService) { }
 
@@ -22,14 +22,13 @@ export class ToDoComponent implements OnDestroy {
   }
 
   addToDo(): void {
-    disabledBut(this.isSendReq);
     const dataToDo = this.formCreateEvent.value;
     dataToDo['created_at'] = moment().format('YYYY-DD-MM');
     this.toDoService.addToDo(dataToDo)
       .pipe(untilDestroyed(this))
       .subscribe( data => {
         if (data) {
-          this.toDoService.$addNewToDo.next(data);
+          this.addNewToDo.emit(data);
           this.formCreateEvent.reset();
         }
     });

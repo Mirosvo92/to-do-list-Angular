@@ -1,84 +1,54 @@
 {
   "users": [
     {
-      "email": "test@test.com",
-      "password": "123321",
-      "name": "test",
+      "email": "mirostest@test.com",
+      "password": "mirosvo",
+      "name": "vlad",
       "id": 1
     }
   ],
   "to_do_list": [
     {
-      "title": "Some title",
-      "description": "Some description",
-      "created_at": "2017-24-12",
-      "id": 8
+      "title": "default1",
+      "description": "default",
+      "created_at": "2018-02-11",
+      "id": 1
     },
     {
-      "title": "xcx",
-      "description": "cxcxcx",
-      "created_at": "2018-30-11",
-      "id": 9
+      "title": "default3",
+      "description": "default",
+      "created_at": "2018-02-10",
+      "id": 2
     },
     {
-      "title": "nm,n,mnm",
-      "description": " nmn m",
-      "created_at": "2018-30-11",
-      "id": 10
+      "title": "default3",
+      "description": "default",
+      "created_at": "2018-02-09",
+      "id": 3
     },
     {
-      "title": "12",
-      "description": "123",
-      "created_at": "2018-30-11",
-      "id": 11
+      "title": "default4",
+      "description": "default",
+      "created_at": "2018-02-08",
+      "id": 4
     },
     {
-      "title": "dfdf",
-      "description": "dfdfdf",
-      "created_at": "2018-30-11",
-      "id": 12
+      "title": "default5",
+      "description": "default",
+      "created_at": "2018-02-07",
+      "id": 5
     },
     {
-      "title": "dfdf",
-      "description": "dfdfdf",
-      "created_at": "2018-30-11",
-      "id": 13
+      "title": "default6",
+      "description": "default",
+      "created_at": "2018-02-06",
+      "id": 6
     },
     {
-      "title": "dfdf",
-      "description": "dfdfdf",
-      "created_at": "2018-30-11",
-      "id": 14
-    },
-    {
-      "title": "dfdf",
-      "description": "dfdfdf",
-      "created_at": "2018-30-11",
-      "id": 15
-    },
-    {
-      "title": "dfdf",
-      "description": "dfdfdf",
-      "created_at": "2018-30-11",
-      "id": 16
-    },
-    {
-      "title": "dfdf",
-      "description": "dfdfdf",
-      "created_at": "2018-30-11",
-      "id": 17
-    },
-    {
-      "title": "sdfsdf",
-      "description": "sdfsdfsf",
-      "created_at": "2018-30-11",
-      "id": 18
-    },
-    {
-      "title": "sdfsdf",
-      "description": "sdfsdfsfsdf",
-      "created_at": "2018-30-11",
-      "id": 19
+      "title": "default7",
+      "description": "default",
+      "created_at": "2018-02-12",
+      "id": 7
     }
   ]
 }

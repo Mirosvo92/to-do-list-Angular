@@ -1,15 +1,25 @@
 <!-- user data -->
 <app-user-setting></app-user-setting>
 <!-- to do -->
-<app-to-do></app-to-do>
+<app-to-do (addNewToDo)="add($event)"></app-to-do>
 <div class="line"></div>
 <div class="system-wrapper">
   <!-- filter -->
   <div class="system__filter">
-    <app-to-do-filter [toDoData]="toDoListData" [cloneToDoListData]="cloneObjectListData" (sendFilterData)="filter($event)"></app-to-do-filter>
+    <app-to-do-filter
+      [toDoData]="toDoListData"
+      [cloneToDoListData]="cloneObjectListData"
+      (sendFilterData)="filter($event)">
+    </app-to-do-filter>
   </div>
   <!-- list -->
   <div class="system__list">
-    <app-to-do-items [toDoItemsList]="toDoListData" (deleToDo)="delete($event)"></app-to-do-items>
+    <app-to-do-items [toDoItemsList]="toDoListDataPagination" (deleToDo)="delete($event)"></app-to-do-items>
+    <!-- pagination -->
+    <app-pagination
+      [toDoData]="toDoListData"
+      [settingsPagination]="dataPagination"
+      (setPagination)="setDataByPagination($event)">
+    </app-pagination>
   </div>
 </div>

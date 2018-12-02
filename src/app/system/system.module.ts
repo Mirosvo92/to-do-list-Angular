@@ -9,6 +9,7 @@ import { ToDoFilterComponent } from './to-do-filter/to-do-filter.component';
 import { UserSettingComponent } from './user-setting/user-setting.component';
 import { ToDoItemsTitleComponent } from './to-do-items/to-do-items-title/to-do-items-title.component';
 import { ToDoItemsDescriptionComponent } from './to-do-items/to-do-items-description/to-do-items-description.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -21,6 +22,7 @@ import { ToDoItemsDescriptionComponent } from './to-do-items/to-do-items-descrip
   UserSettingComponent,
   ToDoItemsTitleComponent,
   ToDoItemsDescriptionComponent,
+  PaginationComponent,
  ],
   imports: [
     SharedModule,
